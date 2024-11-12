@@ -15,8 +15,10 @@ class SbisHome(BasePage):
 		self.find(SbisHomeLocators.ContactsBtn).click()
 
 	def clickOnAllContacts(self):
+		URL = self.browser.current_url
+
 		self.find(SbisHomeLocators.AllContactsLink).click()
   
-		self.waitUrlChange("https:\\/\\/sbis\\.ru\\/contacts\\/.+?\\?tab=clients")
+		self.waitUrlChange(URL)
   
 		return SbisContacts(self.browser)
